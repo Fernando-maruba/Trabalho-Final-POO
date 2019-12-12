@@ -23,7 +23,7 @@ class Materia
         virtual ~Materia();
         char* getNome();
         int getQtd();
-        void setProfessor(Professor NovoProfessor);
+        char* setProfessor(Professor NovoProfessor);
         bool adicionarAluno(Aluno aluno);
         bool removeAluno(char nome[50]);
         void imprimeAluno(char nome[50]);

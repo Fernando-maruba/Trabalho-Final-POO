@@ -13,6 +13,28 @@ Sistema::~Sistema()
 {
 }
 
+template<class Tipo>
+int acharPos(char file[50], char nome[50])
+{
+    int pos = 0;
+    fstream arq(file, ios::binary | ios::in | ios::out);
+    if (!arq.is_open())
+        return -1;
+    Tipo aux;
+
+    arq.read(reinterpret_cast<char*>(&aux), sizeof (Tipo));
+    while(!arq.eof() && strcmp(aux.getNome(), nome))
+    {
+        arq.read(reinterpret_cast<char*>(&aux), sizeof (Tipo));
+        pos++;
+    }
+
+    if(!strcmp(aux.getNome(), nome))
+       return pos;
+    return -1;
+    arq.close();
+}
+
 void Sistema::adicionaAluno()
 {
     ofstream saida(fileAlunos, ios::binary | ios::app);
@@ -30,36 +52,30 @@ void Sistema::adicionaAluno()
 
     cout << "Preencha os seguintes campos abaixo:" << endl;
     cout << "Nome: ";
-    cin >> nome;
+    fflush(stdin);
+    cin.getline(nome, sizeof(nome));
     cout << "Idade: ";
     cin >> idade;
     cout << "RA: ";
     cin >> ra;
     cout << "Curso: ";
-    cin >> curso;
+    fflush(stdin);
+    cin.getline(curso, sizeof(curso));
 
     Aluno aux;
-    entrada.read(reinterpret_cast<char*>(&aux), sizeof (Aluno));
 
-
-    while(!entrada.eof() && strcmp(aux.getNome(), nome) && aux.getRa() != ra)
-        entrada.read(reinterpret_cast<char*>(&aux), sizeof (Aluno));
-
-    if(strcmp(aux.getNome(), nome) && aux.getRa() != ra)
-    {
-        Aluno escrever(nome, idade, ra, curso);
-        entrada.close();
-        saida.open(fileAlunos, ios::binary | ios::app);
-        saida.write(reinterpret_cast<char*>(&escrever), sizeof (Aluno));
-        saida.close();
-        entrada.open(fileAlunos, ios::binary);
-    }
-    else
+    int posAluno = acharPos<Aluno>(fileAlunos, nome);
+    if (posAluno != -1)
     {
         cout << "Aluno ja cadastrado" << endl;
+        return;
     }
 
+    Aluno escrever(nome, idade, ra, curso);
     entrada.close();
+    saida.open(fileAlunos, ios::binary | ios::app);
+    saida.write(reinterpret_cast<char*>(&escrever), sizeof (Aluno));
+    saida.close();
 }
 
 void Sistema::adicionaProfessor()
@@ -79,33 +95,29 @@ void Sistema::adicionaProfessor()
 
     cout << "Preencha os seguintes campos abaixo:" << endl;
     cout << "Nome: ";
-    cin >> nome;
+    fflush(stdin);
+    cin.getline(nome, sizeof(nome));
     cout << "Idade: ";
     cin >> idade;
     cout << "Identificacao: ";
     cin >> identificacao;
     cout << "Especialidade: ";
-    cin >> especialidade;
+    fflush(stdin);
+    cin.getline( especialidade, sizeof(especialidade));
 
     Professor aux;
-    entrada.read(reinterpret_cast<char*>(&aux), sizeof (Professor));
 
-
-    while(!entrada.eof() && strcmp(aux.getNome(), nome) && aux.getIdentificacao() != identificacao)
-        entrada.read(reinterpret_cast<char*>(&aux), sizeof (Professor));
-
-    entrada.close();
-    if(strcmp(aux.getNome(), nome) && aux.getIdentificacao() != identificacao)
-    {
-        Professor escrever(nome, idade, identificacao, especialidade);
-        saida.open(fileProfessores, ios::binary | ios::app);
-        saida.write(reinterpret_cast<char*>(&escrever), sizeof (Professor));
-        saida.close();
-    }
-    else
+    int posProfessor = acharPos<Professor>(fileProfessores, nome);
+    if (posProfessor != -1)
     {
         cout << "Professor ja cadastrado" << endl;
+        return;
     }
+    Professor escrever(nome, idade, identificacao, especialidade);
+    saida.open(fileProfessores, ios::binary | ios::app);
+    saida.write(reinterpret_cast<char*>(&escrever), sizeof (Professor));
+    saida.close();
+
 }
 
 void Sistema::imprimirAluno()
@@ -118,17 +130,20 @@ void Sistema::imprimirAluno()
         }
     char nome[50];
     cout << "Nome do Aluno: ";
-    cin >> nome;
+    fflush(stdin);
+    cin.getline(nome, sizeof(nome));
 
     Aluno aux;
-    entrada.read(reinterpret_cast<char*>(&aux), sizeof (Aluno));
-    while(!entrada.eof() && strcmp(aux.getNome(), nome))
-        entrada.read( reinterpret_cast<char *>(&aux), sizeof (Aluno));
-
-    if(!entrada.eof())
-        aux.imprime();
-    else
+    int posAluno = acharPos<Aluno>(fileAlunos, nome);
+    if (posAluno == -1)
+    {
         cout << "Aluno nao encontrado" << endl;
+        return;
+    }
+    entrada.seekg(posAluno * sizeof(Aluno));
+    entrada.read(reinterpret_cast<char*>(&aux), sizeof (Aluno));
+
+    aux.imprime();
     entrada.close();
 }
 
@@ -142,17 +157,20 @@ void Sistema::imprimirProfessor()
         }
     char nome[50];
     cout << "Nome do Professor: ";
-    cin >> nome;
+    fflush(stdin);
+    cin.getline(nome, sizeof(nome));
 
     Professor aux;
-    entrada.read(reinterpret_cast<char*>(&aux), sizeof (Professor));
-    while(!entrada.eof() && strcmp(aux.getNome(), nome))
-        entrada.read( reinterpret_cast<char *>(&aux), sizeof (Professor));
-
-    if(!entrada.eof())
-        aux.imprime();
-    else
+    int verifica = acharPos<Professor>(fileProfessores, nome);
+    if (verifica == -1)
+    {
         cout << "Professor nao encontrado" << endl;
+        return;
+    }
+    entrada.seekg(verifica * sizeof(Professor));
+    entrada.read(reinterpret_cast<char*>(&aux), sizeof (Professor));
+    entrada.close();
+    aux.imprime();
     entrada.close();
 }
 
@@ -160,7 +178,8 @@ void Sistema::adicionaMateria()
 {
     char nome[50];
     cout << "Digite o nome da Materia: ";
-    cin >> nome;
+    fflush(stdin);
+    cin.getline(nome, sizeof(nome));
 
     ofstream saida(fileMateriais, ios::binary | ios::app);
     saida.close();
@@ -171,28 +190,18 @@ void Sistema::adicionaMateria()
             return;
         }
 
-    Materia aux;
-    entrada.read(reinterpret_cast<char*>(&aux), sizeof (Materia));
-
-
-    while(!entrada.eof() && strcmp(aux.getNome(), nome))
-        entrada.read(reinterpret_cast<char*>(&aux), sizeof (Materia));
-
-    if(strcmp(aux.getNome(), nome))
+    int achou = acharPos<Materia>(fileMateriais, nome);
+    if (achou != -1)
     {
-        Materia escrever(nome);
-        entrada.close();
-        saida.open(fileMateriais, ios::binary | ios::app);
-        saida.write(reinterpret_cast<char*>(&escrever), sizeof (Materia));
-        saida.close();
-        entrada.open(fileMateriais, ios::binary);
-    }
-    else
-    {
-        cout << "Materia ja cadastrado" << endl;
+        cout << "Materia ja cadastrada" << endl;
+        return;
     }
 
+    Materia escrever(nome);
     entrada.close();
+    saida.open(fileMateriais, ios::binary | ios::app);
+    saida.write(reinterpret_cast<char*>(&escrever), sizeof (Materia));
+    saida.close();
 
 }
 
@@ -204,20 +213,22 @@ void Sistema::imprimirMateria()
             cout << "Falha ao abrir o entradauivo" << endl;
             return;
         }
+    Materia auxMateria;
     char nome[50];
     cout << "Nome da Materia: ";
-    cin >> nome;
+    fflush(stdin);
+    cin.getline(nome, sizeof(nome));
 
-    Materia aux;
-    entrada.read(reinterpret_cast<char*>(&aux), sizeof (Materia));
-    while(!entrada.eof() && strcmp(aux.getNome(), nome))
-        entrada.read( reinterpret_cast<char *>(&aux), sizeof (Materia));
-
-    if(!strcmp(aux.getNome(), nome))
-        aux.imprime();
-    else
-        cout << "Materia nao encontrado" << endl;
+    int posMateria = acharPos<Materia>(fileMateriais, nome);
+    if (posMateria == -1)
+    {
+        cout << "Materia nao encontrada";
+        return;
+    }
+    entrada.seekg(posMateria * sizeof(Materia));
+    entrada.read(reinterpret_cast<char*>(&auxMateria), sizeof (Materia));
     entrada.close();
+    auxMateria.imprime();
 }
 
 void Sistema::adicionaCursante()
@@ -227,9 +238,11 @@ void Sistema::adicionaCursante()
     char aluno[50];
     char materia[50];
     cout << "Digite o nome do aluno: ";
-    cin >> aluno;
+    fflush(stdin);
+    cin.getline(aluno, sizeof(aluno));
     cout << "Digite o nome da materia: ";
-    cin >> materia;
+    fflush(stdin);
+    cin.getline(materia, sizeof(materia));
     Aluno auxAluno;
     Materia auxMateria;
     ifstream entrada(fileAlunos, ios::binary);
@@ -239,20 +252,14 @@ void Sistema::adicionaCursante()
             return;
         }
 
-    entrada.read(reinterpret_cast<char*>(&auxAluno), sizeof (Aluno));
-    while(!entrada.eof() && strcmp(auxAluno.getNome(), aluno))
-    {
-        entrada.read( reinterpret_cast<char *>(&auxAluno), sizeof (Aluno));
-        posAluno++;
-    }
-
-    if(!strcmp(auxAluno.getNome(), aluno));
-    else
+    posAluno = acharPos<Aluno>(fileAlunos, aluno);
+    if (posAluno == -1)
     {
         cout << "Aluno nao encontrado" << endl;
-        entrada.close();
         return;
     }
+    entrada.seekg(posAluno * sizeof(Aluno));
+    entrada.read(reinterpret_cast<char*>(&auxAluno), sizeof (Aluno));
     entrada.close();
 
     entrada.open(fileMateriais, ios::binary);
@@ -262,20 +269,14 @@ void Sistema::adicionaCursante()
             return;
         }
 
-    entrada.read(reinterpret_cast<char*>(&auxMateria), sizeof (Materia));
-    while(!entrada.eof() && strcmp(auxMateria.getNome(), materia))
+    posMateria = acharPos<Materia>(fileMateriais, materia);
+    if (posMateria == -1)
     {
-        entrada.read( reinterpret_cast<char *>(&auxMateria), sizeof (Materia));
-        posMateria++;
-    }
-
-    if(!strcmp(auxMateria.getNome(), materia));
-    else
-    {
-        cout << "Materia nao encontrada" << endl;
-        entrada.close();
+        cout << "Materia nao encontrada";
         return;
     }
+    entrada.seekg(posMateria * sizeof(Materia));
+    entrada.read(reinterpret_cast<char*>(&auxMateria), sizeof (Materia));
     entrada.close();
 
     int verifica = 0;
@@ -308,11 +309,14 @@ void Sistema::adicionaMinistrante()
     char professor[50];
     char materia[50];
     cout << "Digite o nome do professor: ";
-    cin >> professor;
+    fflush(stdin);
+    cin.getline(professor, sizeof(professor));
     cout << "Digite o nome da materia: ";
-    cin >> materia;
+    fflush(stdin);
+    cin.getline(materia, sizeof(materia));
     Professor auxProfessor;
     Materia auxMateria;
+
     ifstream entrada(fileProfessores, ios::binary);
     if (!entrada.is_open())
         {
@@ -320,20 +324,14 @@ void Sistema::adicionaMinistrante()
             return;
         }
 
-    entrada.read(reinterpret_cast<char*>(&auxProfessor), sizeof (Professor));
-    while(!entrada.eof() && strcmp(auxProfessor.getNome(), professor))
-    {
-        entrada.read( reinterpret_cast<char *>(&auxProfessor), sizeof (Professor));
-        posProfessor++;
-    }
-
-    if(!strcmp(auxProfessor.getNome(), professor));
-    else
+    posProfessor = acharPos<Professor>(fileProfessores, professor);
+    if (posProfessor == -1)
     {
         cout << "Professor nao encontrado" << endl;
-        entrada.close();
         return;
     }
+    entrada.seekg(posProfessor * sizeof(Professor));
+    entrada.read(reinterpret_cast<char*>(&auxProfessor), sizeof (Professor));
     entrada.close();
 
     entrada.open(fileMateriais, ios::binary);
@@ -343,29 +341,27 @@ void Sistema::adicionaMinistrante()
             return;
         }
 
-    entrada.read(reinterpret_cast<char*>(&auxMateria), sizeof (Materia));
-    while(!entrada.eof() && strcmp(auxMateria.getNome(), materia))
+    posMateria = acharPos<Materia>(fileMateriais, materia);
+    if (posMateria == -1)
     {
-        entrada.read( reinterpret_cast<char *>(&auxMateria), sizeof (Materia));
-        posMateria++;
-    }
-
-    if(!strcmp(auxMateria.getNome(), materia));
-    else
-    {
-        cout << "Materia nao encontrada" << endl;
-        entrada.close();
+        cout << "Materia nao encontrada";
         return;
     }
+    entrada.seekg(posMateria * sizeof(Materia));
+    entrada.read(reinterpret_cast<char*>(&auxMateria), sizeof (Materia));
     entrada.close();
 
+    char antigoProfessor[50];
+    Professor auxAntigoProfessor;
+    int posAntigoProfessor;
     int verifica = 0;
-    auxMateria.setProfessor(auxProfessor);
+    strcpy(antigoProfessor, auxMateria.setProfessor(auxProfessor));
+    posAntigoProfessor = acharPos<Professor>(fileProfessores, antigoProfessor);
     verifica = !(auxProfessor.adicionaMateria(auxMateria));
 
     if (verifica)
     {
-        cout << "Erro ao adicionar o aluno a materia" << endl;
+        cout << "Erro ao adicionar o professor a materia" << endl;
         return;
     }
     fstream arq(fileMateriais, ios::binary | ios::in | ios::out);
@@ -381,16 +377,25 @@ void Sistema::adicionaMinistrante()
     arq.open(fileProfessores, ios::binary | ios::in | ios::out);
     arq.seekg((posProfessor) * sizeof(Professor));
     arq.write(reinterpret_cast<char*>(&auxProfessor), sizeof (Professor));
+    if (posAntigoProfessor != -1)
+    {
+        arq.seekg(posAntigoProfessor * sizeof(Professor));
+        arq.read(reinterpret_cast<char*>(&auxAntigoProfessor), sizeof (Professor));
+        auxAntigoProfessor.removeMateria(auxMateria.getNome());
+        arq.seekg((posAntigoProfessor) * sizeof(Professor));
+        arq.write(reinterpret_cast<char*>(&auxAntigoProfessor), sizeof (Professor));
+    }
     arq.close();
 }
 
-/*void Sistema::fazerChamada()
+void Sistema::fazerChamada()
 {
     char materia[50];
     int pos = 0;
     int falta;
     cout << "Digite o nome da materia: ";
-    cin >> materia;
+    fflush(stdin);
+    cin.getline(materia, sizeof(materia));
     fstream arq(fileMateriais, ios::binary | ios::in | ios::out);
     if (!arq.is_open())
     {
@@ -418,4 +423,8 @@ void Sistema::adicionaMinistrante()
         cin >> falta;
         auxMateria.acrescentarFalta(i, falta);
     }
-}*/
+
+    arq.seekg(pos * sizeof(Materia));
+    arq.write(reinterpret_cast<char *>(&auxMateria), sizeof (Materia));
+    arq.close();
+}

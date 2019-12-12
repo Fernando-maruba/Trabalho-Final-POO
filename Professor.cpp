@@ -59,7 +59,7 @@ bool Professor::removeMateria (char removida[50])
 {
     for (int i = 0; i < qtdMaterias; i++)
     {
-        if (strcmp(materias[i], removida))
+        if (!strcmp(materias[i], removida))
         {
             for (int j = i; j < qtdMaterias; j++)
             {

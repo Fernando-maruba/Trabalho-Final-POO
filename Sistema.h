@@ -19,7 +19,7 @@ class Sistema
         void adicionaMateria();
         void adicionaCursante();
         void adicionaMinistrante();
-        //void fazerChamada();
+        void fazerChamada();
         void imprimirAluno();
         void imprimirMateria();
         void imprimirProfessor();

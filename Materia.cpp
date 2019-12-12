@@ -24,9 +24,12 @@ int Materia::getQtd()
     return qtdAlunos;
 }
 
-void Materia::setProfessor(Professor novoProfessor)
+char* Materia::setProfessor(Professor novoProfessor)
 {
+    char* aux;
+    strcpy(aux, professor);
     strcpy(professor, novoProfessor.getNome());
+    return aux;
 }
 
 bool Materia::adicionarAluno(Aluno aluno)
@@ -95,9 +98,8 @@ void Materia::imprime()
     cout << "Alunos: " << endl;
     for (int i = 0; i < qtdAlunos; i++)
     {
-        cout << "Nome: " << faltasAlunos[i].aluno;
+        cout << "Nome: " << faltasAlunos[i].aluno << " ";
         cout << "Faltas: " << faltasAlunos[i].Nfaltas << endl;
-        cout << endl;
     }
 }
 
