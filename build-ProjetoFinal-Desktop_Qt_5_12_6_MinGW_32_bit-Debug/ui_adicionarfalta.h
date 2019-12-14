@@ -56,7 +56,7 @@ public:
         lineEdit_5->setAutoFillBackground(false);
         label_6 = new QLabel(adicionarFalta);
         label_6->setObjectName(QString::fromUtf8("label_6"));
-        label_6->setGeometry(QRect(330, 80, 99, 16));
+        label_6->setGeometry(QRect(230, 80, 331, 20));
         label_6->setAlignment(Qt::AlignCenter);
 
         retranslateUi(adicionarFalta);
