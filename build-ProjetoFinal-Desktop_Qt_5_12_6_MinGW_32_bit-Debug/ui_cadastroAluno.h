@@ -112,6 +112,10 @@ public:
 
         verticalLayout_2->addWidget(label_5);
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> ad5180723dfbc56987b417507b3941819abfec03
         retranslateUi(cadastroAluno);
         QObject::connect(pushButton_2, SIGNAL(clicked()), cadastroAluno, SLOT(reject()));
 
@@ -134,6 +138,7 @@ public:
         label_4->setText(QApplication::translate("cadastroAluno", "RA", nullptr));
         label_5->setText(QApplication::translate("cadastroAluno", "Curso", nullptr));
     } // retranslateUi
+<<<<<<< HEAD
 };
 
 namespace Ui
@@ -141,6 +146,13 @@ namespace Ui
 class cadastroAluno : public Ui_cadastroAluno
 {
 };
+=======
+
+};
+
+namespace Ui {
+    class cadastroAluno: public Ui_cadastroAluno {};
+>>>>>>> ad5180723dfbc56987b417507b3941819abfec03
 } // namespace Ui
 
 QT_END_NAMESPACE
