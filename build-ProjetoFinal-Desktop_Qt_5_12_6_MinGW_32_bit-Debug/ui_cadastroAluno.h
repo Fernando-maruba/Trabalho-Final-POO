@@ -112,7 +112,6 @@ public:
 
         verticalLayout_2->addWidget(label_5);
 
-
         retranslateUi(cadastroAluno);
         QObject::connect(pushButton_2, SIGNAL(clicked()), cadastroAluno, SLOT(reject()));
 
@@ -135,11 +134,13 @@ public:
         label_4->setText(QApplication::translate("cadastroAluno", "RA", nullptr));
         label_5->setText(QApplication::translate("cadastroAluno", "Curso", nullptr));
     } // retranslateUi
-
 };
 
-namespace Ui {
-    class cadastroAluno: public Ui_cadastroAluno {};
+namespace Ui
+{
+class cadastroAluno : public Ui_cadastroAluno
+{
+};
 } // namespace Ui
 
 QT_END_NAMESPACE
