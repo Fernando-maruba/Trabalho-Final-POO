@@ -2,6 +2,7 @@
 #define ADICIONARFALTA_H
 #include <string>
 #include <QDialog>
+#include <Materia.h>
 
 using namespace std;
 namespace Ui {
@@ -19,8 +20,13 @@ public:
 private slots:
     void on_pushButton_clicked();
 
+    void on_pushButton_3_clicked();
+
 private:
     Ui::adicionarFalta *ui;
+    Materia* materia;
+    int contadorImpressao;
+    int pos;
 };
 
 #endif // ADICIONARFALTA_H
