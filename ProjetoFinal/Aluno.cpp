@@ -1,7 +1,6 @@
 #include "Aluno.h"
 #include <cstring>
 #include "Materia.h"
-#include "impaluno.h"
 Aluno::Aluno(){};
 
 Aluno::Aluno(char nome[50], int idade, int ra, char curso[50])
@@ -72,11 +71,12 @@ bool Aluno::removeMateria(char removida[50])
     return 0;
 }
 
+//É feita a concatenação de tudo que deverá aparecer na tela de consulta
 string Aluno::imprime()
 {
     string imprimir;
     string nomeS = this->nome, idadeS = to_string(this->idade), raS = to_string(ra), cursoS = curso, materiasS;
-    imprimir = "Nome: "+nomeS+"\nIdade: "+idadeS+"\nRA: "+raS+"\nCurso: "+cursoS+"\nMaterias: ";
+    imprimir = "Nome: "+nomeS+"\nIdade: "+idadeS+"\nRA: "+raS+"\nCurso: "+cursoS+"\nMaterias: \n";
     for (int i = 0; i < qtdMaterias; i++) //imprime todas as materias do vetor que as armazena
     {
         materiasS = materias[i];

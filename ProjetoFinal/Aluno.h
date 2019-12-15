@@ -24,11 +24,14 @@ class Aluno : public Pessoa
 
         bool adicionaMateria(Materia nova);
         bool removeMateria(char removida[50]);
+
+        //Retorna o texto que será mostrado na interface
         virtual string imprime();
     private:
         int ra;
         char curso[50];
         char materias[20][50];
+        //Armazena o tamanho ocupado do vetor
         int qtdMaterias;
 };
 

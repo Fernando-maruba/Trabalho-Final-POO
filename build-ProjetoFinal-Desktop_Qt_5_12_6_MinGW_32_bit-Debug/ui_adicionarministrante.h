@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
@@ -24,69 +25,100 @@ QT_BEGIN_NAMESPACE
 class Ui_adicionarMinistrante
 {
 public:
-    QWidget *layoutWidget_2;
-    QVBoxLayout *verticalLayout;
-    QSpacerItem *verticalSpacer_2;
-    QLabel *label_3;
-    QLineEdit *lineEdit;
-    QLabel *label_2;
-    QLineEdit *lineEdit_2;
+    QLabel *label;
     QPushButton *pushButton;
     QPushButton *pushButton_2;
-    QLabel *label;
+    QWidget *horizontalLayoutWidget;
+    QHBoxLayout *horizontalLayout;
+    QVBoxLayout *verticalLayout_3;
+    QLabel *label_3;
+    QLabel *label_2;
+    QSpacerItem *horizontalSpacer;
+    QVBoxLayout *verticalLayout_4;
+    QLineEdit *lineEdit;
+    QSpacerItem *verticalSpacer;
+    QLineEdit *lineEdit_2;
 
     void setupUi(QDialog *adicionarMinistrante)
     {
         if (adicionarMinistrante->objectName().isEmpty())
             adicionarMinistrante->setObjectName(QString::fromUtf8("adicionarMinistrante"));
-        adicionarMinistrante->resize(711, 406);
-        layoutWidget_2 = new QWidget(adicionarMinistrante);
-        layoutWidget_2->setObjectName(QString::fromUtf8("layoutWidget_2"));
-        layoutWidget_2->setGeometry(QRect(190, 30, 351, 231));
-        verticalLayout = new QVBoxLayout(layoutWidget_2);
-        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        verticalLayout->setContentsMargins(0, 0, 0, 0);
-        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        verticalLayout->addItem(verticalSpacer_2);
-
-        label_3 = new QLabel(layoutWidget_2);
-        label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setAlignment(Qt::AlignCenter);
-
-        verticalLayout->addWidget(label_3);
-
-        lineEdit = new QLineEdit(layoutWidget_2);
-        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
-        lineEdit->setAutoFillBackground(false);
-
-        verticalLayout->addWidget(lineEdit);
-
-        label_2 = new QLabel(layoutWidget_2);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setAlignment(Qt::AlignCenter);
-
-        verticalLayout->addWidget(label_2);
-
-        lineEdit_2 = new QLineEdit(layoutWidget_2);
-        lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
-
-        verticalLayout->addWidget(lineEdit_2);
-
-        pushButton = new QPushButton(layoutWidget_2);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-
-        verticalLayout->addWidget(pushButton);
-
-        pushButton_2 = new QPushButton(layoutWidget_2);
-        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-
-        verticalLayout->addWidget(pushButton_2);
-
+        adicionarMinistrante->resize(491, 445);
+        adicionarMinistrante->setStyleSheet(QString::fromUtf8("background-color:#FFDFD3"));
         label = new QLabel(adicionarMinistrante);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(190, 20, 341, 20));
+        label->setGeometry(QRect(35, 20, 421, 20));
+        QFont font;
+        font.setBold(true);
+        font.setUnderline(true);
+        font.setWeight(75);
+        font.setStrikeOut(false);
+        label->setFont(font);
+        label->setStyleSheet(QString::fromUtf8("font-size:20px;\n"
+""));
         label->setAlignment(Qt::AlignCenter);
+        pushButton = new QPushButton(adicionarMinistrante);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        pushButton->setGeometry(QRect(100, 330, 131, 41));
+        pushButton->setStyleSheet(QString::fromUtf8("font-size:16px;\n"
+"background-color:#6CB2D1"));
+        pushButton_2 = new QPushButton(adicionarMinistrante);
+        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
+        pushButton_2->setGeometry(QRect(260, 330, 131, 41));
+        pushButton_2->setStyleSheet(QString::fromUtf8("font-size:16px;\n"
+"background-color:#6CB2D1"));
+        horizontalLayoutWidget = new QWidget(adicionarMinistrante);
+        horizontalLayoutWidget->setObjectName(QString::fromUtf8("horizontalLayoutWidget"));
+        horizontalLayoutWidget->setGeometry(QRect(10, 90, 461, 211));
+        horizontalLayout = new QHBoxLayout(horizontalLayoutWidget);
+        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        horizontalLayout->setSizeConstraint(QLayout::SetNoConstraint);
+        horizontalLayout->setContentsMargins(0, 0, 0, 0);
+        verticalLayout_3 = new QVBoxLayout();
+        verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
+        label_3 = new QLabel(horizontalLayoutWidget);
+        label_3->setObjectName(QString::fromUtf8("label_3"));
+        label_3->setStyleSheet(QString::fromUtf8("font-size:16px;"));
+        label_3->setAlignment(Qt::AlignCenter);
+
+        verticalLayout_3->addWidget(label_3);
+
+        label_2 = new QLabel(horizontalLayoutWidget);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+        label_2->setStyleSheet(QString::fromUtf8("font-size:16px;"));
+        label_2->setAlignment(Qt::AlignCenter);
+
+        verticalLayout_3->addWidget(label_2);
+
+
+        horizontalLayout->addLayout(verticalLayout_3);
+
+        horizontalSpacer = new QSpacerItem(0, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+
+        horizontalLayout->addItem(horizontalSpacer);
+
+        verticalLayout_4 = new QVBoxLayout();
+        verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
+        lineEdit = new QLineEdit(horizontalLayoutWidget);
+        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
+        lineEdit->setAutoFillBackground(false);
+        lineEdit->setStyleSheet(QString::fromUtf8("background-color:white;"));
+
+        verticalLayout_4->addWidget(lineEdit);
+
+        verticalSpacer = new QSpacerItem(50, 40, QSizePolicy::Minimum, QSizePolicy::Fixed);
+
+        verticalLayout_4->addItem(verticalSpacer);
+
+        lineEdit_2 = new QLineEdit(horizontalLayoutWidget);
+        lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
+        lineEdit_2->setStyleSheet(QString::fromUtf8("background-color:white;"));
+
+        verticalLayout_4->addWidget(lineEdit_2);
+
+
+        horizontalLayout->addLayout(verticalLayout_4);
+
 
         retranslateUi(adicionarMinistrante);
         QObject::connect(pushButton_2, SIGNAL(clicked()), adicionarMinistrante, SLOT(reject()));
@@ -97,16 +129,16 @@ public:
     void retranslateUi(QDialog *adicionarMinistrante)
     {
         adicionarMinistrante->setWindowTitle(QApplication::translate("adicionarMinistrante", "Dialog", nullptr));
-        label_3->setText(QApplication::translate("adicionarMinistrante", "Nome do professor", nullptr));
+        label->setText(QApplication::translate("adicionarMinistrante", "Associar Professor \303\240 Mat\303\251ria", nullptr));
+        pushButton->setText(QApplication::translate("adicionarMinistrante", "Cadastrar", nullptr));
+        pushButton_2->setText(QApplication::translate("adicionarMinistrante", "Cancelar", nullptr));
+        label_3->setText(QApplication::translate("adicionarMinistrante", "Nome do professor:", nullptr));
+        label_2->setText(QApplication::translate("adicionarMinistrante", "Nome da mat\303\251ria:", nullptr));
 #ifndef QT_NO_ACCESSIBILITY
         lineEdit->setAccessibleName(QString());
 #endif // QT_NO_ACCESSIBILITY
         lineEdit->setInputMask(QString());
         lineEdit->setText(QString());
-        label_2->setText(QApplication::translate("adicionarMinistrante", "Nome da materia", nullptr));
-        pushButton->setText(QApplication::translate("adicionarMinistrante", "Cadastrar", nullptr));
-        pushButton_2->setText(QApplication::translate("adicionarMinistrante", "Cancelar", nullptr));
-        label->setText(QApplication::translate("adicionarMinistrante", "Adicionar ministrante de uma materia", nullptr));
     } // retranslateUi
 
 };

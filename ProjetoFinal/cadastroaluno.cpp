@@ -30,6 +30,9 @@ void cadastroAluno::on_pushButton_clicked()
     char cursoC[50];
     strcpy(nomeC, nome.toStdString().c_str());
     strcpy(cursoC, curso.toStdString().c_str());
-    QMessageBox::about(this, "Status", QString::fromStdString(sist.adicionaAluno(nomeC, idade.toInt(), ra.toInt(), cursoC)));
 
+    //Chama a função .adicionaAluno(), a qual retorna o resultado da operação (sucesso ou falha),
+    //o qual sera mostrado em uma message box.
+    QMessageBox::about(this, "Status", QString::fromStdString(sist.adicionaAluno(nomeC, idade.toInt(), ra.toInt(), cursoC)));
+    this->close();
 }
