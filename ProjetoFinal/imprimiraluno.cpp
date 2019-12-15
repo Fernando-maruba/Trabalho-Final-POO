@@ -21,6 +21,10 @@ void imprimirAluno::on_pushButton_clicked()
     QString nome = ui->lineEdit->text();
     char nomeC[50];
     strcpy(nomeC, nome.toStdString().c_str());
+
+    //Recebe o texto que deverá ser impresso de .imprimirAluno
+    //e utiliza a message box para mostrar-lo na tela.
     QString texto = QString::fromStdString(sist.imprimirAluno(nomeC));
     QMessageBox::about(this, "Aluno", texto);
+    this->close();
 }

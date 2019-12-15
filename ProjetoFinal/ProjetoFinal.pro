@@ -27,40 +27,16 @@ SOURCES += \
     cadastroaluno.cpp \
     cadastromateria.cpp \
     cadastroprofessor.cpp \
-    impaluno.cpp \
     imprimiraluno.cpp \
     imprimirmateria.cpp \
     imprimirprofessor.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    telacadastros.cpp \
+    telaconsulta.cpp \
+    telamaterias.cpp
 
 HEADERS += \
-    ../../Área de Trabalho/programas/Projeto Final/include/Aluno.h \
-    ../../Área de Trabalho/programas/Projeto Final/include/Aluno.h \
-    ../../Área de Trabalho/programas/Projeto Final/include/Aluno.h \
-    ../../Área de Trabalho/programas/Projeto Final/include/Aluno.h \
-    ../../Área de Trabalho/programas/Projeto Final/include/Aluno.h \
-    ../../Área de Trabalho/programas/Projeto Final/include/Aluno.h \
-    ../../Área de Trabalho/programas/Projeto Final/include/Materia.h \
-    ../../Área de Trabalho/programas/Projeto Final/include/Materia.h \
-    ../../Área de Trabalho/programas/Projeto Final/include/Materia.h \
-    ../../Área de Trabalho/programas/Projeto Final/include/Materia.h \
-    ../../Área de Trabalho/programas/Projeto Final/include/Materia.h \
-    ../../Área de Trabalho/programas/Projeto Final/include/Pessoa.h \
-    ../../Área de Trabalho/programas/Projeto Final/include/Pessoa.h \
-    ../../Área de Trabalho/programas/Projeto Final/include/Pessoa.h \
-    ../../Área de Trabalho/programas/Projeto Final/include/Pessoa.h \
-    ../../Área de Trabalho/programas/Projeto Final/include/Pessoa.h \
-    ../../Área de Trabalho/programas/Projeto Final/include/Professor.h \
-    ../../Área de Trabalho/programas/Projeto Final/include/Professor.h \
-    ../../Área de Trabalho/programas/Projeto Final/include/Professor.h \
-    ../../Área de Trabalho/programas/Projeto Final/include/Professor.h \
-    ../../Área de Trabalho/programas/Projeto Final/include/Professor.h \
-    ../../Área de Trabalho/programas/Projeto Final/include/Sistema.h \
-    ../../Área de Trabalho/programas/Projeto Final/include/Sistema.h \
-    ../../Área de Trabalho/programas/Projeto Final/include/Sistema.h \
-    ../../Área de Trabalho/programas/Projeto Final/include/Sistema.h \
-    ../../Área de Trabalho/programas/Projeto Final/include/Sistema.h \
     Aluno.h \
     Materia.h \
     Pessoa.h \
@@ -72,11 +48,13 @@ HEADERS += \
     cadastroaluno.h \
     cadastromateria.h \
     cadastroprofessor.h \
-    impaluno.h \
     imprimiraluno.h \
     imprimirmateria.h \
     imprimirprofessor.h \
-    mainwindow.h
+    mainwindow.h \
+    telacadastros.h \
+    telaconsulta.h \
+    telamaterias.h
 
 FORMS += \
     adicionarcursante.ui \
@@ -88,7 +66,10 @@ FORMS += \
     imprimiraluno.ui \
     imprimirmateria.ui \
     imprimirprofessor.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    telacadastros.ui \
+    telaconsulta.ui \
+    telamaterias.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

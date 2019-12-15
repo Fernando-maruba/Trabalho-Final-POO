@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <class>telaMaterias</class>
+ <widget class="QDialog" name="telaMaterias">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -455,7 +455,15 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QWidget" name="centralwidget">
+  <widget class="QWidget" name="centralwidget" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>20</y>
+     <width>701</width>
+     <height>581</height>
+    </rect>
+   </property>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
@@ -477,7 +485,7 @@
      <string notr="true">font-size:30px;</string>
     </property>
     <property name="text">
-     <string>Controle de Alunos e Matérias</string>
+     <string>Associar Aluno &amp; Prof em Matéria</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -498,7 +506,7 @@ box-shadow: none;
 background-color:#6CB2D1</string>
     </property>
     <property name="text">
-     <string>Cadastros</string>
+     <string>Associar Aluno</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_2">
@@ -516,43 +524,7 @@ box-shadow: none;
 background-color:#6CB2D1</string>
     </property>
     <property name="text">
-     <string>Matérias</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_3">
-    <property name="geometry">
-     <rect>
-      <x>60</x>
-      <y>340</y>
-      <width>211</width>
-      <height>131</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font-size:20px;
-box-shadow: none;
-background-color:#6CB2D1</string>
-    </property>
-    <property name="text">
-     <string>Consultar Dados</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_4">
-    <property name="geometry">
-     <rect>
-      <x>430</x>
-      <y>340</y>
-      <width>211</width>
-      <height>131</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font-size:20px;
-box-shadow: none;
-background-color:#6CB2D1</string>
-    </property>
-    <property name="text">
-     <string>Chamada</string>
+     <string>Associar Professor</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_5">
@@ -569,7 +541,7 @@ background-color:#6CB2D1</string>
 background-color:#4F9EC4</string>
     </property>
     <property name="text">
-     <string>Sair</string>
+     <string>Voltar</string>
     </property>
    </widget>
   </widget>
@@ -584,21 +556,26 @@ background-color:#4F9EC4</string>
    </property>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>pushButton</tabstop>
+  <tabstop>pushButton_2</tabstop>
+  <tabstop>pushButton_5</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>
    <sender>pushButton_5</sender>
    <signal>clicked()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>close()</slot>
+   <receiver>telaMaterias</receiver>
+   <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>397</x>
-     <y>580</y>
+     <x>329</x>
+     <y>581</y>
     </hint>
     <hint type="destinationlabel">
-     <x>541</x>
-     <y>614</y>
+     <x>443</x>
+     <y>617</y>
     </hint>
    </hints>
   </connection>

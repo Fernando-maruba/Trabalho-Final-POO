@@ -76,7 +76,7 @@ string Professor::imprime()
 {
     string imprimir;
     string nomeS = this->nome, idadeS = to_string(this->idade), identificacaoS = to_string(identificacao), especialidadeS = especialidade, materiasS;
-    imprimir = "Nome: "+nomeS+"\nIdade: "+idadeS+"\nIdentificacao: "+identificacaoS+"\nEspecialidade: "+especialidadeS+"\nMaterias: ";
+    imprimir = "Nome: "+nomeS+"\nIdade: "+idadeS+"\nIdentificacao: "+identificacaoS+"\nEspecialidade: "+especialidadeS+"\nMaterias: \n";
     for (int i = 0; i < qtdMaterias; i++) //imprime todas as materias do vetor que as armazena
     {
         materiasS = materias[i];
