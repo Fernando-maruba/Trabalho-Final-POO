@@ -91,7 +91,7 @@ string Sistema::imprimirAluno(char nome[50])
     ifstream entrada(fileAlunos, ios::binary);
     if (!entrada.is_open())
         {
-            return "Falha ao abrir o arquivo";
+            return "Nenhum aluno cadastrado";
         }
 
     Aluno aux;
@@ -112,7 +112,7 @@ string Sistema::imprimirProfessor(char nome[50])
     ifstream entrada(fileProfessores, ios::binary);
     if (!entrada.is_open())
         {
-            return "Falha ao abrir o arquivo";
+            return "Nenhum professor cadastrado";
         }
 
     Professor aux;
@@ -159,7 +159,7 @@ string Sistema::imprimirMateria(char nome[50])
     ifstream entrada(fileMateriais, ios::binary);
     if (!entrada.is_open())
         {
-            return "Falha ao abrir o entradauivo";
+            return "Nenhum cadastro de materia realizado";
         }
     Materia auxMateria;
 
