@@ -23,6 +23,7 @@ void adicionarFalta::on_pushButton_clicked()
 {
     QString materiaQS = ui->lineEdit_5->text();
     ui->lineEdit_5->setText("");
+    ui->lineEdit_5->setPlaceholderText("0 para presente, 1 para falta");
     char materia[50];
     strcpy(materia, materiaQS.toStdString().c_str());
     string file = "materias";
@@ -43,13 +44,13 @@ void adicionarFalta::on_pushButton_clicked()
 
     if (strcmp(auxMateria->getNome(), materia))
         {
-        QMessageBox::about(this, "Status", "Materia nao encontrada");
+        QMessageBox::about(this, "Status", "Matéria não encontrada");
         this->close();
         }
     this->materia = auxMateria;
     if (this->materia->getQtd() <= 0)
     {
-        QMessageBox::about(this, "Status", "Nenhum aluno cadastrado na materia");
+        QMessageBox::about(this, "Status", "Nenhum aluno cadastrado na matéria");
         this->close();
     }
     ui->label_6->setText(QString::fromStdString((this->materia->imprimePosicao(contadorImpressao))));

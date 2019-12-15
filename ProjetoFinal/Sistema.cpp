@@ -50,7 +50,7 @@ string Sistema::adicionaAluno(char nome[50], int idade, int ra, char curso[50])
     int posAluno = acharPos<Aluno>(fileAlunos, nome);
     if (posAluno != -1)
     {
-        return "Aluno ja cadastrado";
+        return "Aluno já cadastrado";
     }
 
     Aluno escrever(nome, idade, ra, curso);
@@ -76,7 +76,7 @@ string Sistema::adicionaProfessor(char nome[50], int idade, int identificacao, c
     int posProfessor = acharPos<Professor>(fileProfessores, nome);
     if (posProfessor != -1)
     {
-        return "Professor ja cadastrado";
+        return "Professor já cadastrado";
     }
     Professor escrever(nome, idade, identificacao, especialidade);
     saida.open(fileProfessores, ios::binary | ios::app);
@@ -98,7 +98,7 @@ string Sistema::imprimirAluno(char nome[50])
     int posAluno = acharPos<Aluno>(fileAlunos, nome);
     if (posAluno == -1)
     {
-        return "Aluno nao encontrado";
+        return "Aluno não encontrado";
     }
     entrada.seekg(posAluno * sizeof(Aluno));
     entrada.read(reinterpret_cast<char*>(&aux), sizeof (Aluno));
@@ -119,11 +119,10 @@ string Sistema::imprimirProfessor(char nome[50])
     int verifica = acharPos<Professor>(fileProfessores, nome);
     if (verifica == -1)
     {
-        return "Professor nao encontrado";
+        return "Professor não encontrado";
     }
     entrada.seekg(verifica * sizeof(Professor));
     entrada.read(reinterpret_cast<char*>(&aux), sizeof (Professor));
-    entrada.close();
     entrada.close();
     return aux.imprime();
 }
@@ -142,7 +141,7 @@ string Sistema::adicionaMateria(char nome[50])
     int achou = acharPos<Materia>(fileMateriais, nome);
     if (achou != -1)
     {
-        return "Materia ja cadastrada";
+        return "Matéria já cadastrada";
     }
 
     Materia escrever(nome);
@@ -150,7 +149,7 @@ string Sistema::adicionaMateria(char nome[50])
     saida.open(fileMateriais, ios::binary | ios::app);
     saida.write(reinterpret_cast<char*>(&escrever), sizeof (Materia));
     saida.close();
-    return "Materia cadastrada com sucesso!";
+    return "Matéria cadastrada com sucesso!";
 
 }
 
@@ -159,14 +158,14 @@ string Sistema::imprimirMateria(char nome[50])
     ifstream entrada(fileMateriais, ios::binary);
     if (!entrada.is_open())
         {
-            return "Nenhum cadastro de materia realizado";
+            return "Nenhum cadastro de matéria realizado";
         }
     Materia auxMateria;
 
     int posMateria = acharPos<Materia>(fileMateriais, nome);
     if (posMateria == -1)
     {
-        return "Materia nao encontrada";
+        return "Matéria não encontrada";
     }
     entrada.seekg(posMateria * sizeof(Materia));
     entrada.read(reinterpret_cast<char*>(&auxMateria), sizeof (Materia));
@@ -189,7 +188,7 @@ string Sistema::adicionaCursante(char aluno[50], char materia[50])
     posAluno = acharPos<Aluno>(fileAlunos, aluno);
     if (posAluno == -1)
     {
-        return "Aluno nao encontrado";
+        return "Aluno não encontrado";
     }
     entrada.seekg(posAluno * sizeof(Aluno));
     entrada.read(reinterpret_cast<char*>(&auxAluno), sizeof (Aluno));
@@ -204,7 +203,7 @@ string Sistema::adicionaCursante(char aluno[50], char materia[50])
     posMateria = acharPos<Materia>(fileMateriais, materia);
     if (posMateria == -1)
     {
-        return "Materia nao encontrada";
+        return "Matéria não encontrada";
     }
     entrada.seekg(posMateria * sizeof(Materia));
     entrada.read(reinterpret_cast<char*>(&auxMateria), sizeof (Materia));
@@ -214,12 +213,12 @@ string Sistema::adicionaCursante(char aluno[50], char materia[50])
     verifica = !(auxMateria.adicionarAluno(auxAluno) && auxAluno.adicionaMateria(auxMateria));
     if (verifica)
     {
-        return "Erro ao adicionar o aluno a materia";
+        return "Erro ao adicionar o aluno a matéria";
     }
     fstream arq(fileMateriais, ios::binary | ios::in | ios::out);
     if (!arq.is_open())
     {
-        return "Nao foi possivel abrir o arquivo";
+        return "Não foi possível abrir o arquivo";
     }
 
     arq.seekg((posMateria) * sizeof(Materia));
@@ -229,7 +228,7 @@ string Sistema::adicionaCursante(char aluno[50], char materia[50])
     arq.seekg((posAluno) * sizeof(Aluno));
     arq.write(reinterpret_cast<char*>(&auxAluno), sizeof (Aluno));
     arq.close();
-    return "Cursante adicionado a materia com sucesso!";
+    return "Cursante adicionado à matéria com sucesso!";
 }
 
 string Sistema::adicionaMinistrante(char professor[50], char materia[50])
@@ -248,7 +247,7 @@ string Sistema::adicionaMinistrante(char professor[50], char materia[50])
     posProfessor = acharPos<Professor>(fileProfessores, professor);
     if (posProfessor == -1)
     {
-        return "Professor nao encontrado";
+        return "Professor não encontrado";
     }
     entrada.seekg(posProfessor * sizeof(Professor));
     entrada.read(reinterpret_cast<char*>(&auxProfessor), sizeof (Professor));
@@ -263,7 +262,7 @@ string Sistema::adicionaMinistrante(char professor[50], char materia[50])
     posMateria = acharPos<Materia>(fileMateriais, materia);
     if (posMateria == -1)
     {
-        return "Materia nao encontrada";
+        return "Matéria não encontrada";
     }
     entrada.seekg(posMateria * sizeof(Materia));
     entrada.read(reinterpret_cast<char*>(&auxMateria), sizeof (Materia));
@@ -279,12 +278,12 @@ string Sistema::adicionaMinistrante(char professor[50], char materia[50])
 
     if (verifica)
     {
-        return "Erro ao adicionar o professor a materia";
+        return "Erro ao adicionar o professor a matéria";
     }
     fstream arq(fileMateriais, ios::binary | ios::in | ios::out);
     if (!arq.is_open())
     {
-        return "Nao foi possivel abrir o arquivo";
+        return "Nao foi possível abrir o arquivo";
     }
 
     arq.seekg((posMateria) * sizeof(Materia));
@@ -302,7 +301,7 @@ string Sistema::adicionaMinistrante(char professor[50], char materia[50])
         arq.write(reinterpret_cast<char*>(&auxAntigoProfessor), sizeof (Professor));
     }
     arq.close();
-    return "Ministrante adicionado a materia com sucesso!";
+    return "Ministrante adicionado à matéria com sucesso!";
 }
 
 void Sistema::fazerChamada(char materia[50])
@@ -326,7 +325,7 @@ void Sistema::fazerChamada(char materia[50])
 
     if (strcmp(auxMateria.getNome(), materia))
         {
-            cout << "Materia nao encontrada" << endl;
+            cout << "Matéria não encontrada" << endl;
             return;
         }
 

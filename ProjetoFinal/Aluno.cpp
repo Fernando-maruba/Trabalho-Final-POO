@@ -44,8 +44,8 @@ void Aluno::setCurso (char nova[50])
 bool Aluno::adicionaMateria(Materia nova)
 {
     for (int i = 0; i < qtdMaterias; i++)
-    if (!strcmp(materias[i], nova.getNome()))
-        return 0;
+        if (!strcmp(materias[i], nova.getNome()))
+            return 0;
     if (qtdMaterias < 50)
     {
         strcpy(materias[qtdMaterias], nova.getNome());
