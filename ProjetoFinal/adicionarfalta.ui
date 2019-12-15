@@ -86,7 +86,7 @@ background-color:#6CB2D1</string>
     <string>Fazer Chamada</string>
    </property>
    <property name="default">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
    <property name="flat">
     <bool>false</bool>

@@ -26,6 +26,7 @@ class Professor : public Pessoa
         bool adicionaMateria(Materia materia);
         bool removeMateria (char removida[50]);
 
+        //Retorna a string que sera mostrada na interface
         virtual string imprime();
     private:
         int identificacao;

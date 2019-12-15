@@ -13,6 +13,9 @@ Sistema::~Sistema()
 {
 }
 
+
+//Função para achar a posição de uma determinada classe com
+//um determinado nome dentro de um determinado arquivo
 template<class Tipo>
 int acharPos(char file[50], char nome[50])
 {
@@ -173,6 +176,8 @@ string Sistema::imprimirMateria(char nome[50])
     return auxMateria.imprime();
 }
 
+//Nesse metodo, é procurado um aluno e uma materia em seus respectivos arquivos.
+//Caso eles existam, são relacionados e reescritos em seus arquivos
 string Sistema::adicionaCursante(char aluno[50], char materia[50])
 {
     int posAluno = 0;
@@ -231,6 +236,11 @@ string Sistema::adicionaCursante(char aluno[50], char materia[50])
     return "Cursante adicionado à matéria com sucesso!";
 }
 
+//Nesse metodo, é procurado um professor e uma materia em seus respectivos arquivos.
+//Caso eles existam, são relacionados e reescritos em seus arquivos.
+//O professor que era antes relacionado à matéria é retirado do vetor na materia,
+//procurado no arquivo, em seguida tem a matéria retirada do seu vetor de matérias
+//e é reescrito no arquivo
 string Sistema::adicionaMinistrante(char professor[50], char materia[50])
 {
     int posProfessor = 0;
@@ -304,6 +314,8 @@ string Sistema::adicionaMinistrante(char professor[50], char materia[50])
     return "Ministrante adicionado à matéria com sucesso!";
 }
 
+//Funçao utilizada antes da interface gráfica.
+//Foi deixada no código para fins avaliativos.
 void Sistema::fazerChamada(char materia[50])
 {
     int pos = 0;

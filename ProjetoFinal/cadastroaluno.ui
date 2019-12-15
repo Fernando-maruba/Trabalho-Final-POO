@@ -39,6 +39,9 @@ background-color:#6CB2D1</string>
    <property name="text">
     <string>Cadastrar</string>
    </property>
+   <property name="default">
+    <bool>true</bool>
+   </property>
   </widget>
   <widget class="QPushButton" name="pushButton_2">
    <property name="geometry">

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>730</width>
-    <height>651</height>
+    <width>702</width>
+    <height>637</height>
    </rect>
   </property>
   <property name="palette">
@@ -25,9 +25,9 @@
      <colorrole role="Button">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>255</red>
-        <green>223</green>
-        <blue>211</blue>
+        <red>30</red>
+        <green>195</green>
+        <blue>255</blue>
        </color>
       </brush>
      </colorrole>
@@ -171,9 +171,9 @@
      <colorrole role="Button">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>255</red>
-        <green>223</green>
-        <blue>211</blue>
+        <red>30</red>
+        <green>195</green>
+        <blue>255</blue>
        </color>
       </brush>
      </colorrole>
@@ -317,9 +317,9 @@
      <colorrole role="Button">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>255</red>
-        <green>223</green>
-        <blue>211</blue>
+        <red>30</red>
+        <green>195</green>
+        <blue>255</blue>
        </color>
       </brush>
      </colorrole>
@@ -467,115 +467,110 @@
     </property>
     <property name="font">
      <font>
+      <pointsize>-1</pointsize>
       <weight>75</weight>
       <bold>true</bold>
       <underline>true</underline>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">font-size:30px;</string>
+    </property>
     <property name="text">
-     <string>SISTEMA DE ADMINISTRAÇÃO DE ALUNOS E MATERIAS</string>
+     <string>Controle de Alunos e Matérias</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QLabel" name="label_6">
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>110</y>
+      <width>211</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size:20px;
+box-shadow: none;
+background-color:#6CB2D1</string>
+    </property>
+    <property name="text">
+     <string>Cadastros</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>110</y>
+      <width>211</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size:20px;
+box-shadow: none;
+background-color:#6CB2D1</string>
+    </property>
+    <property name="text">
+     <string>Matérias</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_3">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>340</y>
+      <width>211</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size:20px;
+box-shadow: none;
+background-color:#6CB2D1</string>
+    </property>
+    <property name="text">
+     <string>Consultar Dados</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_4">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>340</y>
+      <width>211</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size:20px;
+box-shadow: none;
+background-color:#6CB2D1</string>
+    </property>
+    <property name="text">
+     <string>Chamada</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_5">
     <property name="geometry">
      <rect>
       <x>230</x>
-      <y>270</y>
-      <width>341</width>
-      <height>20</height>
+      <y>520</y>
+      <width>241</width>
+      <height>51</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size:20px;
+background-color:#4F9EC4</string>
     </property>
     <property name="text">
-     <string>Cadastro de Aluno</string>
+     <string>Sair</string>
     </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
-   <widget class="QWidget" name="layoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>80</x>
-      <y>60</y>
-      <width>571</width>
-      <height>501</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout_2">
-     <item>
-      <widget class="QPushButton" name="pushButton">
-       <property name="text">
-        <string>Cadastrar um aluno</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="pushButton_2">
-       <property name="text">
-        <string>Cadastrar um professor</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="pushButton_9">
-       <property name="text">
-        <string>Cadastrar uma materia</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="pushButton_3">
-       <property name="text">
-        <string>Adicionar um aluno como cursante de uma materia</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="pushButton_8">
-       <property name="text">
-        <string>Adicionar um professor como ministrante de uma materia</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="pushButton_4">
-       <property name="text">
-        <string>Imprimir dados de um aluno</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="pushButton_5">
-       <property name="text">
-        <string>Imprimir dados de um professor</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="pushButton_10">
-       <property name="text">
-        <string>Imprimir dados de uma materia</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="pushButton_7">
-       <property name="text">
-        <string>Fazer chamada</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="pushButton_6">
-       <property name="text">
-        <string>Encerrar sistema</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -583,7 +578,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>730</width>
+     <width>702</width>
      <height>26</height>
     </rect>
    </property>
@@ -592,18 +587,18 @@
  <resources/>
  <connections>
   <connection>
-   <sender>pushButton_6</sender>
+   <sender>pushButton_5</sender>
    <signal>clicked()</signal>
    <receiver>MainWindow</receiver>
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>480</x>
-     <y>535</y>
+     <x>397</x>
+     <y>580</y>
     </hint>
     <hint type="destinationlabel">
-     <x>768</x>
-     <y>496</y>
+     <x>541</x>
+     <y>614</y>
     </hint>
    </hints>
   </connection>
