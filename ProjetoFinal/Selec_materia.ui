@@ -477,7 +477,7 @@
      <string notr="true">font-size:30px;</string>
     </property>
     <property name="text">
-     <string>Controle de Alunos e Matérias</string>
+     <string>Associar Aluno &amp; Prof em Matéria</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>

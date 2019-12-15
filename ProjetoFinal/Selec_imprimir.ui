@@ -477,7 +477,7 @@
      <string notr="true">font-size:30px;</string>
     </property>
     <property name="text">
-     <string>Controle de Alunos e Matérias</string>
+     <string>Consultar Dados</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -498,7 +498,7 @@ box-shadow: none;
 background-color:#6CB2D1</string>
     </property>
     <property name="text">
-     <string>Imprimir Aluno</string>
+     <string>Consultar Aluno</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_2">
@@ -516,7 +516,7 @@ box-shadow: none;
 background-color:#6CB2D1</string>
     </property>
     <property name="text">
-     <string>Imprimir Professor</string>
+     <string>Consultar Professor</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_3">
@@ -534,7 +534,7 @@ box-shadow: none;
 background-color:#6CB2D1</string>
     </property>
     <property name="text">
-     <string>Imprimir Matéria</string>
+     <string>Consultar Matéria</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_5">

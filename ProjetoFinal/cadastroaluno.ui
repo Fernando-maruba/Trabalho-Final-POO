@@ -6,27 +6,35 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>659</width>
-    <height>469</height>
+    <width>491</width>
+    <height>445</height>
    </rect>
   </property>
   <property name="maximumSize">
    <size>
-    <width>704</width>
-    <height>469</height>
+    <width>491</width>
+    <height>445</height>
    </size>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color:#FFDFD3</string>
+  </property>
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>180</x>
-     <y>320</y>
-     <width>93</width>
-     <height>28</height>
+     <x>100</x>
+     <y>330</y>
+     <width>131</width>
+     <height>41</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-size:16px;
+box-shadow: none;
+background-color:#6CB2D1</string>
    </property>
    <property name="text">
     <string>Cadastrar</string>
@@ -35,20 +43,25 @@
   <widget class="QPushButton" name="pushButton_2">
    <property name="geometry">
     <rect>
-     <x>370</x>
-     <y>320</y>
-     <width>93</width>
-     <height>28</height>
+     <x>260</x>
+     <y>330</y>
+     <width>131</width>
+     <height>41</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-size:16px;
+box-shadow: none;
+background-color:#6CB2D1</string>
    </property>
    <property name="text">
     <string>Cancelar</string>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>160</x>
+     <x>110</x>
      <y>80</y>
      <width>351</width>
      <height>231</height>
@@ -63,6 +76,10 @@
       <property name="autoFillBackground">
        <bool>false</bool>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:white;
+</string>
+      </property>
       <property name="inputMask">
        <string/>
       </property>
@@ -72,24 +89,49 @@
      </widget>
     </item>
     <item>
-     <widget class="QLineEdit" name="lineEdit_2"/>
+     <widget class="QLineEdit" name="lineEdit_2">
+      <property name="styleSheet">
+       <string notr="true">background-color:white;</string>
+      </property>
+     </widget>
     </item>
     <item>
-     <widget class="QLineEdit" name="lineEdit_3"/>
+     <widget class="QLineEdit" name="lineEdit_3">
+      <property name="styleSheet">
+       <string notr="true">background-color:white;</string>
+      </property>
+     </widget>
     </item>
     <item>
-     <widget class="QLineEdit" name="lineEdit_4"/>
+     <widget class="QLineEdit" name="lineEdit_4">
+      <property name="styleSheet">
+       <string notr="true">background-color:white;</string>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>170</x>
-     <y>30</y>
+     <x>70</x>
+     <y>20</y>
      <width>341</width>
      <height>20</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>-1</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+     <underline>true</underline>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:none;
+font-size:20px;
+</string>
    </property>
    <property name="text">
     <string>Cadastro de Aluno</string>
@@ -98,10 +140,10 @@
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>100</x>
+     <x>30</x>
      <y>90</y>
      <width>58</width>
      <height>201</height>
@@ -110,8 +152,12 @@
    <layout class="QVBoxLayout" name="verticalLayout_2">
     <item>
      <widget class="QLabel" name="label_2">
+      <property name="styleSheet">
+       <string notr="true">font-size:16px;
+</string>
+      </property>
       <property name="text">
-       <string>Nome</string>
+       <string>Nome:</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -120,8 +166,11 @@
     </item>
     <item>
      <widget class="QLabel" name="label_3">
+      <property name="styleSheet">
+       <string notr="true">font-size:16px;</string>
+      </property>
       <property name="text">
-       <string>Idade</string>
+       <string>Idade:</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -130,8 +179,12 @@
     </item>
     <item>
      <widget class="QLabel" name="label_4">
+      <property name="styleSheet">
+       <string notr="true">font-size:16px;
+</string>
+      </property>
       <property name="text">
-       <string>RA</string>
+       <string>RA:</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -140,8 +193,11 @@
     </item>
     <item>
      <widget class="QLabel" name="label_5">
+      <property name="styleSheet">
+       <string notr="true">font-size:16px</string>
+      </property>
       <property name="text">
-       <string>Curso</string>
+       <string>Curso:</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>

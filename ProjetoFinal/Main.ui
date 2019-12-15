@@ -534,7 +534,7 @@ box-shadow: none;
 background-color:#6CB2D1</string>
     </property>
     <property name="text">
-     <string>Imprimir</string>
+     <string>Consultar Dados</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_4">
