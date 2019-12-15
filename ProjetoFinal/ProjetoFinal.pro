@@ -79,6 +79,10 @@ HEADERS += \
     mainwindow.h
 
 FORMS += \
+    Main.ui \
+    Selec_cadastro.ui \
+    Selec_imprimir.ui \
+    Selec_materia.ui \
     adicionarcursante.ui \
     adicionarfalta.ui \
     adicionarministrante.ui \

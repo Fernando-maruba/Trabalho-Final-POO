@@ -214,6 +214,7 @@ Makefile: ../ProjetoFinal/ProjetoFinal.pro C:/Qt/5.12.6/mingw73_64/mkspecs/win32
 		C:/Qt/5.12.6/mingw73_64/mkspecs/features/qt_config.prf \
 		C:/Qt/5.12.6/mingw73_64/mkspecs/win32-g++/qmake.conf \
 		C:/Qt/5.12.6/mingw73_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		C:/Qt/5.12.6/mingw73_64/mkspecs/features/exclusive_builds.prf \
 		C:/Qt/5.12.6/mingw73_64/mkspecs/features/toolchain.prf \
 		C:/Qt/5.12.6/mingw73_64/mkspecs/features/default_pre.prf \
@@ -393,6 +394,7 @@ C:/Qt/5.12.6/mingw73_64/mkspecs/features/qt_functions.prf:
 C:/Qt/5.12.6/mingw73_64/mkspecs/features/qt_config.prf:
 C:/Qt/5.12.6/mingw73_64/mkspecs/win32-g++/qmake.conf:
 C:/Qt/5.12.6/mingw73_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 C:/Qt/5.12.6/mingw73_64/mkspecs/features/exclusive_builds.prf:
 C:/Qt/5.12.6/mingw73_64/mkspecs/features/toolchain.prf:
 C:/Qt/5.12.6/mingw73_64/mkspecs/features/default_pre.prf:
