@@ -13,7 +13,6 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
-#include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QWidget>
 
@@ -28,7 +27,6 @@ public:
     QPushButton *pushButton_2;
     QPushButton *pushButton_3;
     QPushButton *pushButton_5;
-    QMenuBar *menubar;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -113,7 +111,7 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         label = new QLabel(centralwidget);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(90, 10, 551, 41));
+        label->setGeometry(QRect(70, 10, 551, 41));
         QFont font;
         font.setBold(true);
         font.setUnderline(true);
@@ -145,10 +143,6 @@ public:
         pushButton_5->setStyleSheet(QString::fromUtf8("font-size:20px;\n"
 "background-color:#4F9EC4"));
         MainWindow->setCentralWidget(centralwidget);
-        menubar = new QMenuBar(MainWindow);
-        menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 702, 26));
-        MainWindow->setMenuBar(menubar);
 
         retranslateUi(MainWindow);
 

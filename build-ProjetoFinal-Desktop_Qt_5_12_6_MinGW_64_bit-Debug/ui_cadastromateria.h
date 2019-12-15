@@ -89,6 +89,9 @@ public:
         retranslateUi(cadastroMateria);
         QObject::connect(pushButton_2, SIGNAL(clicked()), cadastroMateria, SLOT(reject()));
 
+        pushButton->setDefault(true);
+
+
         QMetaObject::connectSlotsByName(cadastroMateria);
     } // setupUi
 

@@ -84,6 +84,9 @@ public:
         retranslateUi(imprimirAluno);
         QObject::connect(pushButton_2, SIGNAL(clicked()), imprimirAluno, SLOT(reject()));
 
+        pushButton->setDefault(true);
+
+
         QMetaObject::connectSlotsByName(imprimirAluno);
     } // setupUi
 

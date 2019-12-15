@@ -112,7 +112,7 @@ public:
         QObject::connect(pushButton_2, SIGNAL(clicked()), adicionarFalta, SLOT(close()));
         QObject::connect(pushButton, SIGNAL(clicked()), pushButton, SLOT(close()));
 
-        pushButton->setDefault(false);
+        pushButton->setDefault(true);
 
 
         QMetaObject::connectSlotsByName(adicionarFalta);

@@ -459,15 +459,15 @@
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>20</y>
-     <width>701</width>
-     <height>581</height>
+     <y>0</y>
+     <width>702</width>
+     <height>637</height>
     </rect>
    </property>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>90</x>
+      <x>75</x>
       <y>10</y>
       <width>551</width>
       <height>41</height>
@@ -544,16 +544,6 @@ background-color:#4F9EC4</string>
      <string>Voltar</string>
     </property>
    </widget>
-  </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>702</width>
-     <height>26</height>
-    </rect>
-   </property>
   </widget>
  </widget>
  <tabstops>

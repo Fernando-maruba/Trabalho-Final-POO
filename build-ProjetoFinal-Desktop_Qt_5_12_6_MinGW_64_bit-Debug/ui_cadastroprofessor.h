@@ -151,6 +151,9 @@ public:
         retranslateUi(cadastroProfessor);
         QObject::connect(pushButton_3, SIGNAL(clicked()), cadastroProfessor, SLOT(reject()));
 
+        pushButton_4->setDefault(true);
+
+
         QMetaObject::connectSlotsByName(cadastroProfessor);
     } // setupUi
 

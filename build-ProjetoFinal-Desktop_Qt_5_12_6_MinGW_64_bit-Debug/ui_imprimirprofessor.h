@@ -83,6 +83,9 @@ public:
         retranslateUi(imprimirProfessor);
         QObject::connect(pushButton_2, SIGNAL(clicked()), imprimirProfessor, SLOT(reject()));
 
+        pushButton->setDefault(true);
+
+
         QMetaObject::connectSlotsByName(imprimirProfessor);
     } // setupUi
 

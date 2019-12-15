@@ -82,6 +82,9 @@ public:
         retranslateUi(imprimirMateria);
         QObject::connect(pushButton_2, SIGNAL(clicked()), imprimirMateria, SLOT(reject()));
 
+        pushButton->setDefault(true);
+
+
         QMetaObject::connectSlotsByName(imprimirMateria);
     } // setupUi
 

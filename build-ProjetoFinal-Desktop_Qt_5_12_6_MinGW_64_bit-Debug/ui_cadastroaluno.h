@@ -142,6 +142,9 @@ public:
         retranslateUi(cadastroAluno);
         QObject::connect(pushButton_2, SIGNAL(clicked()), cadastroAluno, SLOT(reject()));
 
+        pushButton->setDefault(true);
+
+
         QMetaObject::connectSlotsByName(cadastroAluno);
     } // setupUi
 
