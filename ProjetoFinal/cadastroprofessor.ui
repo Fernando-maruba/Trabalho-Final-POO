@@ -203,7 +203,6 @@ font-size:20px;
    </property>
    <property name="styleSheet">
     <string notr="true">font-size:16px;
-box-shadow: none;
 background-color:#6CB2D1</string>
    </property>
    <property name="text">
@@ -221,7 +220,6 @@ background-color:#6CB2D1</string>
    </property>
    <property name="styleSheet">
     <string notr="true">font-size:16px;
-box-shadow: none;
 background-color:#6CB2D1</string>
    </property>
    <property name="text">

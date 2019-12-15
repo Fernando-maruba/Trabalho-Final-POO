@@ -139,13 +139,11 @@ public:
         pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
         pushButton_3->setGeometry(QRect(260, 340, 131, 41));
         pushButton_3->setStyleSheet(QString::fromUtf8("font-size:16px;\n"
-"box-shadow: none;\n"
 "background-color:#6CB2D1"));
         pushButton_4 = new QPushButton(cadastroProfessor);
         pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
         pushButton_4->setGeometry(QRect(100, 340, 131, 41));
         pushButton_4->setStyleSheet(QString::fromUtf8("font-size:16px;\n"
-"box-shadow: none;\n"
 "background-color:#6CB2D1"));
 
         retranslateUi(cadastroProfessor);

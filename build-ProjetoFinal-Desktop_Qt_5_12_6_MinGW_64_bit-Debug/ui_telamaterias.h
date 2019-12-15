@@ -123,13 +123,11 @@ public:
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
         pushButton->setGeometry(QRect(60, 110, 211, 131));
         pushButton->setStyleSheet(QString::fromUtf8("font-size:20px;\n"
-"box-shadow: none;\n"
 "background-color:#6CB2D1"));
         pushButton_2 = new QPushButton(centralwidget);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
         pushButton_2->setGeometry(QRect(430, 110, 211, 131));
         pushButton_2->setStyleSheet(QString::fromUtf8("font-size:20px;\n"
-"box-shadow: none;\n"
 "background-color:#6CB2D1"));
         pushButton_5 = new QPushButton(centralwidget);
         pushButton_5->setObjectName(QString::fromUtf8("pushButton_5"));

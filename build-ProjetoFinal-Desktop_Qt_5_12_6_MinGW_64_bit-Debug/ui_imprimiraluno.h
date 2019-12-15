@@ -41,7 +41,6 @@ public:
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
         pushButton_2->setGeometry(QRect(260, 330, 131, 41));
         pushButton_2->setStyleSheet(QString::fromUtf8("font-size:16px;\n"
-"box-shadow: none;\n"
 "background-color:#6CB2D1"));
         label = new QLabel(imprimirAluno);
         label->setObjectName(QString::fromUtf8("label"));
@@ -58,7 +57,6 @@ public:
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
         pushButton->setGeometry(QRect(100, 330, 131, 41));
         pushButton->setStyleSheet(QString::fromUtf8("font-size:16px;\n"
-"box-shadow: none;\n"
 "background-color:#6CB2D1"));
         horizontalLayoutWidget = new QWidget(imprimirAluno);
         horizontalLayoutWidget->setObjectName(QString::fromUtf8("horizontalLayoutWidget"));
