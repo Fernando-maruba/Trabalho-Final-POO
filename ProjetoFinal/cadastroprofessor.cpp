@@ -26,5 +26,9 @@ void cadastroProfessor::on_pushButton_4_clicked()
     char especialidadeC[50];
     strcpy(nomeC, nome.toStdString().c_str());
     strcpy(especialidadeC, especialidade.toStdString().c_str());
+
+    //Chama a função .adicionaProfessor(), a qual retorna o resultado da operação (sucesso ou falha),
+    //o qual sera mostrado em uma message box.
     QMessageBox::about(this, "Status", QString::fromStdString(sist.adicionaProfessor(nomeC, idade.toInt(), identificacao.toInt(), especialidadeC)));
+    this->close();
 }

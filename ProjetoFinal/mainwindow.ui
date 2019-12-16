@@ -6,8 +6,13 @@
    <rect>
     <x>0</x>
     <y>0</y>
+<<<<<<< HEAD
     <width>730</width>
     <height>651</height>
+=======
+    <width>702</width>
+    <height>637</height>
+>>>>>>> 3d2c355aedfbbdefb99a7e4c73fd88d17ce99121
    </rect>
   </property>
   <property name="palette">
@@ -477,7 +482,11 @@
      <string notr="true">font-size:30px;</string>
     </property>
     <property name="text">
+<<<<<<< HEAD
      <string>SISTEMA DE ADMINISTRAÇÃO</string>
+=======
+     <string>Controle de Alunos e Matérias</string>
+>>>>>>> 3d2c355aedfbbdefb99a7e4c73fd88d17ce99121
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -494,7 +503,11 @@
     </property>
     <property name="styleSheet">
      <string notr="true">font-size:20px;
+<<<<<<< HEAD
 box-shadow: 0px;
+=======
+box-shadow: none;
+>>>>>>> 3d2c355aedfbbdefb99a7e4c73fd88d17ce99121
 background-color:#6CB2D1</string>
     </property>
     <property name="text">
@@ -513,8 +526,12 @@ background-color:#6CB2D1</string>
     <property name="styleSheet">
      <string notr="true">font-size:20px;
 box-shadow: none;
+<<<<<<< HEAD
 background-color:#6CB2D1
 </string>
+=======
+background-color:#6CB2D1</string>
+>>>>>>> 3d2c355aedfbbdefb99a7e4c73fd88d17ce99121
     </property>
     <property name="text">
      <string>Matérias</string>
@@ -535,7 +552,11 @@ box-shadow: none;
 background-color:#6CB2D1</string>
     </property>
     <property name="text">
+<<<<<<< HEAD
      <string>Imprimir</string>
+=======
+     <string>Consultar Dados</string>
+>>>>>>> 3d2c355aedfbbdefb99a7e4c73fd88d17ce99121
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_4">
@@ -556,11 +577,19 @@ background-color:#6CB2D1</string>
      <string>Chamada</string>
     </property>
    </widget>
+<<<<<<< HEAD
    <widget class="QPushButton" name="pushButton_6">
     <property name="geometry">
      <rect>
       <x>230</x>
       <y>540</y>
+=======
+   <widget class="QPushButton" name="pushButton_5">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>520</y>
+>>>>>>> 3d2c355aedfbbdefb99a7e4c73fd88d17ce99121
       <width>241</width>
       <height>51</height>
      </rect>
@@ -579,12 +608,37 @@ background-color:#4F9EC4</string>
     <rect>
      <x>0</x>
      <y>0</y>
+<<<<<<< HEAD
      <width>730</width>
+=======
+     <width>702</width>
+>>>>>>> 3d2c355aedfbbdefb99a7e4c73fd88d17ce99121
      <height>26</height>
     </rect>
    </property>
   </widget>
  </widget>
  <resources/>
+<<<<<<< HEAD
  <connections/>
+=======
+ <connections>
+  <connection>
+   <sender>pushButton_5</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>397</x>
+     <y>580</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>541</x>
+     <y>614</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+>>>>>>> 3d2c355aedfbbdefb99a7e4c73fd88d17ce99121
 </ui>

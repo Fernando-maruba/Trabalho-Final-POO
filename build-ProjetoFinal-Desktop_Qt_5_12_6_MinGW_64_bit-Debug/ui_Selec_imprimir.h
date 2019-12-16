@@ -1,13 +1,13 @@
 /********************************************************************************
-** Form generated from reading UI file 'mainwindow.ui'
+** Form generated from reading UI file 'Selec_imprimir.ui'
 **
 ** Created by: Qt User Interface Compiler version 5.12.6
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef UI_MAINWINDOW_H
-#define UI_MAINWINDOW_H
+#ifndef UI_SELEC_IMPRIMIR_H
+#define UI_SELEC_IMPRIMIR_H
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
@@ -27,15 +27,14 @@ public:
     QPushButton *pushButton;
     QPushButton *pushButton_2;
     QPushButton *pushButton_3;
-    QPushButton *pushButton_4;
-    QPushButton *pushButton_6;
+    QPushButton *pushButton_5;
     QMenuBar *menubar;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(730, 651);
+        MainWindow->resize(701, 637);
         QPalette palette;
         QBrush brush(QColor(0, 0, 0, 255));
         brush.setStyle(Qt::SolidPattern);
@@ -114,7 +113,7 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         label = new QLabel(centralwidget);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(90, 10, 551, 91));
+        label->setGeometry(QRect(90, 10, 551, 41));
         QFont font;
         font.setBold(true);
         font.setUnderline(true);
@@ -126,36 +125,29 @@ public:
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
         pushButton->setGeometry(QRect(60, 110, 211, 131));
         pushButton->setStyleSheet(QString::fromUtf8("font-size:20px;\n"
-"box-shadow: 0px;\n"
+"box-shadow: none;\n"
 "background-color:#6CB2D1"));
         pushButton_2 = new QPushButton(centralwidget);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
         pushButton_2->setGeometry(QRect(430, 110, 211, 131));
         pushButton_2->setStyleSheet(QString::fromUtf8("font-size:20px;\n"
 "box-shadow: none;\n"
-"background-color:#6CB2D1\n"
-""));
+"background-color:#6CB2D1"));
         pushButton_3 = new QPushButton(centralwidget);
         pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
         pushButton_3->setGeometry(QRect(60, 340, 211, 131));
         pushButton_3->setStyleSheet(QString::fromUtf8("font-size:20px;\n"
 "box-shadow: none;\n"
 "background-color:#6CB2D1"));
-        pushButton_4 = new QPushButton(centralwidget);
-        pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
-        pushButton_4->setGeometry(QRect(430, 340, 211, 131));
-        pushButton_4->setStyleSheet(QString::fromUtf8("font-size:20px;\n"
-"box-shadow: none;\n"
-"background-color:#6CB2D1"));
-        pushButton_6 = new QPushButton(centralwidget);
-        pushButton_6->setObjectName(QString::fromUtf8("pushButton_6"));
-        pushButton_6->setGeometry(QRect(230, 540, 241, 51));
-        pushButton_6->setStyleSheet(QString::fromUtf8("font-size:20px;\n"
+        pushButton_5 = new QPushButton(centralwidget);
+        pushButton_5->setObjectName(QString::fromUtf8("pushButton_5"));
+        pushButton_5->setGeometry(QRect(230, 520, 241, 51));
+        pushButton_5->setStyleSheet(QString::fromUtf8("font-size:20px;\n"
 "background-color:#4F9EC4"));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 730, 26));
+        menubar->setGeometry(QRect(0, 0, 701, 26));
         MainWindow->setMenuBar(menubar);
 
         retranslateUi(MainWindow);
@@ -166,12 +158,11 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", nullptr));
-        label->setText(QApplication::translate("MainWindow", "SISTEMA DE ADMINISTRA\303\207\303\203O", nullptr));
-        pushButton->setText(QApplication::translate("MainWindow", "Cadastros", nullptr));
-        pushButton_2->setText(QApplication::translate("MainWindow", "Mat\303\251rias", nullptr));
-        pushButton_3->setText(QApplication::translate("MainWindow", "Imprimir", nullptr));
-        pushButton_4->setText(QApplication::translate("MainWindow", "Chamada", nullptr));
-        pushButton_6->setText(QApplication::translate("MainWindow", "Sair", nullptr));
+        label->setText(QApplication::translate("MainWindow", "Controle de Alunos e Mat\303\251rias", nullptr));
+        pushButton->setText(QApplication::translate("MainWindow", "Imprimir Aluno", nullptr));
+        pushButton_2->setText(QApplication::translate("MainWindow", "Imprimir Professor", nullptr));
+        pushButton_3->setText(QApplication::translate("MainWindow", "Imprimir Mat\303\251ria", nullptr));
+        pushButton_5->setText(QApplication::translate("MainWindow", "Voltar", nullptr));
     } // retranslateUi
 
 };
@@ -182,4 +173,4 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-#endif // UI_MAINWINDOW_H
+#endif // UI_SELEC_IMPRIMIR_H

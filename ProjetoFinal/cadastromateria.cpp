@@ -21,5 +21,9 @@ void cadastroMateria::on_pushButton_clicked()
     QString nome = ui->lineEdit_5->text();
     char nomeC[50];
     strcpy(nomeC, nome.toStdString().c_str());
+
+    //Chama a função .adicionaMateria(), a qual retorna o resultado da operação (sucesso ou falha),
+    //o qual sera mostrado em uma message box.
     QMessageBox::about(this, "Status", QString::fromStdString(sist.adicionaMateria(nomeC)));
+    this->close();
 }

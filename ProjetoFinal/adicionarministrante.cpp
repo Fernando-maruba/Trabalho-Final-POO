@@ -24,5 +24,9 @@ void adicionarMinistrante::on_pushButton_clicked()
     char materiaC[50];
     strcpy(professorC, professor.toStdString().c_str());
     strcpy(materiaC, materia.toStdString().c_str());
+
+    //Chama a função .adicionaMinistrante(), a qual retorna o resultado da operação (sucesso ou falha),
+    //o qual sera mostrado em uma message box.
     QMessageBox::about(this, "Status", QString::fromStdString(sist.adicionaMinistrante(professorC, materiaC)));
+    this->close();
 }

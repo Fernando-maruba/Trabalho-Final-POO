@@ -12,10 +12,10 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -26,8 +26,8 @@ public:
     QPushButton *pushButton_2;
     QLabel *label;
     QPushButton *pushButton;
-    QWidget *layoutWidget_2;
-    QVBoxLayout *verticalLayout;
+    QWidget *horizontalLayoutWidget;
+    QHBoxLayout *horizontalLayout;
     QLabel *label_2;
     QLineEdit *lineEdit;
 
@@ -35,38 +35,57 @@ public:
     {
         if (imprimirAluno->objectName().isEmpty())
             imprimirAluno->setObjectName(QString::fromUtf8("imprimirAluno"));
-        imprimirAluno->resize(610, 442);
+        imprimirAluno->resize(491, 445);
+        imprimirAluno->setStyleSheet(QString::fromUtf8("background-color:#FFDFD3"));
         pushButton_2 = new QPushButton(imprimirAluno);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-        pushButton_2->setGeometry(QRect(340, 200, 93, 28));
+        pushButton_2->setGeometry(QRect(260, 330, 131, 41));
+        pushButton_2->setStyleSheet(QString::fromUtf8("font-size:16px;\n"
+"box-shadow: none;\n"
+"background-color:#6CB2D1"));
         label = new QLabel(imprimirAluno);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(130, 30, 341, 20));
+        label->setGeometry(QRect(70, 20, 341, 20));
+        QFont font;
+        font.setBold(true);
+        font.setUnderline(true);
+        font.setWeight(75);
+        label->setFont(font);
+        label->setStyleSheet(QString::fromUtf8("font-size:20px;\n"
+"border-bottom:2px;"));
         label->setAlignment(Qt::AlignCenter);
         pushButton = new QPushButton(imprimirAluno);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(170, 200, 93, 28));
-        layoutWidget_2 = new QWidget(imprimirAluno);
-        layoutWidget_2->setObjectName(QString::fromUtf8("layoutWidget_2"));
-        layoutWidget_2->setGeometry(QRect(130, 140, 351, 46));
-        verticalLayout = new QVBoxLayout(layoutWidget_2);
-        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        verticalLayout->setContentsMargins(0, 0, 0, 0);
-        label_2 = new QLabel(layoutWidget_2);
+        pushButton->setGeometry(QRect(100, 330, 131, 41));
+        pushButton->setStyleSheet(QString::fromUtf8("font-size:16px;\n"
+"box-shadow: none;\n"
+"background-color:#6CB2D1"));
+        horizontalLayoutWidget = new QWidget(imprimirAluno);
+        horizontalLayoutWidget->setObjectName(QString::fromUtf8("horizontalLayoutWidget"));
+        horizontalLayoutWidget->setGeometry(QRect(30, 100, 431, 161));
+        horizontalLayout = new QHBoxLayout(horizontalLayoutWidget);
+        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        horizontalLayout->setContentsMargins(0, 0, 0, 0);
+        label_2 = new QLabel(horizontalLayoutWidget);
         label_2->setObjectName(QString::fromUtf8("label_2"));
+        label_2->setStyleSheet(QString::fromUtf8("font-size:16px;"));
         label_2->setAlignment(Qt::AlignCenter);
 
-        verticalLayout->addWidget(label_2);
+        horizontalLayout->addWidget(label_2);
 
-        lineEdit = new QLineEdit(layoutWidget_2);
+        lineEdit = new QLineEdit(horizontalLayoutWidget);
         lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
         lineEdit->setAutoFillBackground(false);
+        lineEdit->setStyleSheet(QString::fromUtf8("background-color:white;"));
 
-        verticalLayout->addWidget(lineEdit);
+        horizontalLayout->addWidget(lineEdit);
 
 
         retranslateUi(imprimirAluno);
         QObject::connect(pushButton_2, SIGNAL(clicked()), imprimirAluno, SLOT(reject()));
+
+        pushButton->setDefault(true);
+
 
         QMetaObject::connectSlotsByName(imprimirAluno);
     } // setupUi
@@ -75,9 +94,9 @@ public:
     {
         imprimirAluno->setWindowTitle(QApplication::translate("imprimirAluno", "Dialog", nullptr));
         pushButton_2->setText(QApplication::translate("imprimirAluno", "Sair", nullptr));
-        label->setText(QApplication::translate("imprimirAluno", "Procurar por um aluno", nullptr));
+        label->setText(QApplication::translate("imprimirAluno", "Dados de Aluno", nullptr));
         pushButton->setText(QApplication::translate("imprimirAluno", "Procurar", nullptr));
-        label_2->setText(QApplication::translate("imprimirAluno", "Nome do aluno", nullptr));
+        label_2->setText(QApplication::translate("imprimirAluno", "Nome do aluno:", nullptr));
 #ifndef QT_NO_ACCESSIBILITY
         lineEdit->setAccessibleName(QString());
 #endif // QT_NO_ACCESSIBILITY

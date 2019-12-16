@@ -9,6 +9,8 @@
 
 using namespace std;
 
+//A maioria dos metodos retorna uma string, isto é feito para que seja mostrado na tela
+//o resultado de cada um desses metodos. Isto é, caso tenha sido um sucesso ou falha
 class Sistema
 {
     public:

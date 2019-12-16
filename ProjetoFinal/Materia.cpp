@@ -83,6 +83,8 @@ void Materia::imprimeAluno(char nome[50])
     cout << "Aluno nao encontrado" << endl;
 }
 
+
+//Retorna o nome de aluno armazenado em uma determinada posição do vetor
 string Materia::imprimePosicao(int posicao)
 {
     return faltasAlunos[posicao].aluno;
@@ -93,6 +95,8 @@ void Materia::acrescentarFalta(int posicao, int falta)
     faltasAlunos[posicao].Nfaltas = faltasAlunos[posicao].Nfaltas + falta;
 }
 
+
+//É feita a concatenação de tudo que deverá aparecer na tela de consulta
 string Materia::imprime()
 {
     cout << "Materia: " << nome << endl;
